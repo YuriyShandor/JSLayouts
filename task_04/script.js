@@ -1,10 +1,7 @@
 function compareString (string1, string2) {
-  if (string1 == string2) {
-    return true;
-  } else {
-    return false;
-  }
+  return string1 == string2
 }
+
 
 console.log(compareString("Lviv", "Kyiv"));
 console.log(compareString("Lviv", "Lviv"));
