@@ -1,5 +1,7 @@
-console.log(LIST);
+var array = LIST;
 
-for (var i=0; i < LIST.length; i++) {
-  console.log("Населення міста " + LIST[i].city + " - " + LIST[i].population + " осіб");
+console.log(array);
+
+for (var i=0; i < array.length; i++) {
+  console.log("Населення міста " + array[i].city + " - " + array[i].population + " осіб");
 }
