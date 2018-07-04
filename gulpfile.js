@@ -17,13 +17,14 @@ gulp.task('jsCompile', () => {
     .pipe(babel({
       presets: ['env']
     }))
-    .pipe(rename({
-      suffix: '.min'
-    }))
-    .pipe(uglify())
     .pipe(gulp.dest('js'))
     .pipe(browserSync.stream())
 });
+
+// .pipe(rename({
+//   suffix: '.min'
+// }))
+// .pipe(uglify())
 
 // SASS Compilation
 gulp.task('sassCompile', () =>  {
