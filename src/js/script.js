@@ -26,5 +26,48 @@ $(document).ready(function() {
     $('.sumvalitems-block__value').html(sumValItemsVal);
   };
 
+  // ================= Simple gallery carousel ===============
 
+  let imagesGalleryArr = $('.img-gallery__item');
+  let activeImage = 0;
+  let slideInterval = setInterval(nextSlide, 5000);
+
+  function nextSlide(){
+    imagesGalleryArr[activeImage].style.opacity = '0';
+    activeImage++;
+
+    if(activeImage >= imagesGalleryArr.length) {
+      activeImage = 0;
+    };
+
+    imagesGalleryArr[activeImage].style.opacity = '1';
+  }
+
+  $('.img-gallery__btn_next').click(function() {
+    imagesGalleryArr[activeImage].style.opacity = '0';
+    activeImage++;
+
+    if(activeImage >= imagesGalleryArr.length) {
+      activeImage = 0;
+    };
+
+    imagesGalleryArr[activeImage].style.opacity = '1';
+
+    clearInterval(slideInterval);
+    slideInterval = setInterval(nextSlide, 5000);
+  });
+
+  $('.img-gallery__btn_prev').click(function() {
+    imagesGalleryArr[activeImage].style.opacity = '0';
+    activeImage--;
+
+    if(activeImage < 0) {
+      activeImage = imagesGalleryArr.length - 1;
+    };
+
+    imagesGalleryArr[activeImage].style.opacity = '1';
+
+    clearInterval(slideInterval);
+    slideInterval = setInterval(nextSlide, 5000);
+  });
 });
