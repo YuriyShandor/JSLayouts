@@ -1,0 +1,132 @@
+@import "./_components/_header&footer.scss";
+
+.row-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input-block, .result-block {
+  display: flex;
+  align-items: center;
+
+  span {
+    font-size: 20px;
+    font-weight: 400;
+    margin-right: 10px;
+  }
+
+  margin: 15px;
+}
+
+.input-block {
+  input {
+    width: 250px;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #424242;
+    background: #fff;
+    border: 1px solid #9e9e9e;
+    border-radius: 5px;
+    outline: none;
+
+    &:focus {
+      border: 1px solid #000;
+    }
+  }
+}
+
+.result-block {
+  &__inner {
+    min-width: 100px;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #424242;
+    background: #fff;
+    border: 1px solid #9e9e9e;
+    border-radius: 5px;
+
+    .hide {
+      font-size: 14px;
+      font-weight: 400;
+      color: #fff;
+    }
+  }
+}
+
+@media only screen and (max-width : 1199px) {
+
+}
+
+@media only screen and (max-width : 991px) {
+
+}
+
+@media only screen and (max-width : 767px) {
+  .input-block, .result-block {
+    flex-direction: column;
+    align-items: center;
+
+    span {
+      font-size: 18px;
+      margin-right: 0px;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+
+
+@media only screen and (max-width : 1199px) {
+
+}
+
+@media only screen and (max-width : 991px) {
+
+}
+
+@media only screen and (max-width : 767px) {
+
+}
+
+@media only screen and (max-width : 520px) {
+
+}
+
+
+
+@media only screen and (max-width : 1199px) {
+
+}
+
+@media only screen and (max-width : 991px) {
+
+}
+
+@media only screen and (max-width : 767px) {
+
+}
+
+@media only screen and (max-width : 520px) {
+
+}
+
+
+
+@media only screen and (max-width : 1199px) {
+
+}
+
+@media only screen and (max-width : 991px) {
+
+}
+
+@media only screen and (max-width : 767px) {
+
+}
+
+@media only screen and (max-width : 520px) {
+
+}
