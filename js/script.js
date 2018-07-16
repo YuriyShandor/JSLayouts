@@ -72,4 +72,7 @@ $(document).ready(function () {
     clearInterval(slideInterval);
     slideInterval = setInterval(nextSlide, 5000);
   });
+
+  //===============================================
+
 });
