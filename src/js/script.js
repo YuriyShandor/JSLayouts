@@ -71,7 +71,17 @@ $(document).ready(function() {
     slideInterval = setInterval(nextSlide, 5000);
   });
 
-  //===============================================
 
+  // ================= Random elements ===============
 
+  function randomElem(min, max) {
+    return Math.floor(Math.random() * (max - min + 1))
+  };
+
+  let randomElementsArr = $('.random-elem-block__item');
+
+  setInterval(function() {
+    let rand = randomElem(0, randomElementsArr.length - 1);
+    randomElementsArr[rand].classList.toggle('active');
+  }, 500)
 });
