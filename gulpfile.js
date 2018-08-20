@@ -9,10 +9,24 @@ const autoprefixer = require('gulp-autoprefixer');
 const cssnano = require('gulp-cssnano');
 const watch = require('gulp-watch');
 const browserSync = require('browser-sync').create();
+const gutil = require('gulp-util');
+const gplumber = require('gulp-plumber');
+
+let errorHandler = () => {
+  return gplumber(function(error){
+    var msg = error.codeFrame.replace(/\n/g, '\n    ');
+    gutil.log('|- ' + gutil.colors.bgRed.bold('Build Error in ' + error.plugin));
+    gutil.log('|- ' + gutil.colors.bgRed.bold(error.message));
+    gutil.log('|- ' + gutil.colors.bgRed('>>>'));
+    gutil.log('|\n    ' + msg + '\n           |');
+    gutil.log('|- ' + gutil.colors.bgRed('<<<'));
+  });
+};
 
 // JS Compilation
 gulp.task('jsCompile', () => {
   gulp.src('src/js/*.js')
+    .pipe(errorHandler())
     .pipe(watch('src/js/*.js'))
     .pipe(babel({
       presets: ['env']
